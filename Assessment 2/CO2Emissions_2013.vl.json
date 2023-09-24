@@ -715,7 +715,7 @@
             "field": "Value_co2_emissions_kt_by_country",
             "type": "quantitative",
             "title": "CO2 Emissions (kt)",
-            "format": ".2f"
+            "format": ",.2f"
           }
         ]
       }
