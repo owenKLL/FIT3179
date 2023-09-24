@@ -1,725 +1,766 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global CO2 Emissions per Capita (2013)",
-  "width": 800,
-  "height": 400,
-  "projection": {"type": "equalEarth"},
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_ocean"}
-      },
-      "mark": {"type": "geoshape", "fill": "#29678d", "stroke": null}
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Global CO2 Emissions per Capita (2013)",
+    "width": 800,
+    "height": 400,
+    "projection": {
+        "type": "equalEarth"
     },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-      },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
-    },
-    {
-      "data": {
-        "values": [
-          {"lon": -180, "lat": 0},
-          {"lon": -150, "lat": 0},
-          {"lon": -120, "lat": 0},
-          {"lon": -90, "lat": 0},
-          {"lon": -60, "lat": 0},
-          {"lon": -30, "lat": 0},
-          {"lon": 0, "lat": 0},
-          {"lon": 30, "lat": 0},
-          {"lon": 60, "lat": 0},
-          {"lon": 90, "lat": 0},
-          {"lon": 120, "lat": 0},
-          {"lon": 150, "lat": 0},
-          {"lon": 180, "lat": 0},
-          {"lon": 0, "lat": -90},
-          {"lon": 0, "lat": -60},
-          {"lon": 0, "lat": -30},
-          {"lon": 0, "lat": 0},
-          {"lon": 0, "lat": 30},
-          {"lon": 0, "lat": 60},
-          {"lon": 0, "lat": 90}
-        ]
-      },
-      "mark": {"type": "rule", "color": "#ccc"},
-      "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"}
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-      },
-      "transform": [
+    "layer": [
         {
-          "lookup": "properties.NAME",
-          "from": {
             "data": {
-              "values": [
-                {
-                  "Entity": "Afghanistan",
-                  "Value_co2_emissions_kt_by_country": 5989.999771
-                },
-                {
-                  "Entity": "Albania",
-                  "Value_co2_emissions_kt_by_country": 4440.000057
-                },
-                {
-                  "Entity": "Algeria",
-                  "Value_co2_emissions_kt_by_country": 139020.0043
-                },
-                {
-                  "Entity": "Angola",
-                  "Value_co2_emissions_kt_by_country": 26959.99908
-                },
-                {
-                  "Entity": "Argentina",
-                  "Value_co2_emissions_kt_by_country": 183250
-                },
-                {
-                  "Entity": "Armenia",
-                  "Value_co2_emissions_kt_by_country": 5500
-                },
-                {
-                  "Entity": "Australia",
-                  "Value_co2_emissions_kt_by_country": 380279.9988
-                },
-                {
-                  "Entity": "Austria",
-                  "Value_co2_emissions_kt_by_country": 65750
-                },
-                {
-                  "Entity": "Azerbaijan",
-                  "Value_co2_emissions_kt_by_country": 30940.00053
-                },
-                {"Entity": "Bahamas", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Bangladesh",
-                  "Value_co2_emissions_kt_by_country": 60599.99847
-                },
-                {
-                  "Entity": "Belarus",
-                  "Value_co2_emissions_kt_by_country": 59990.00168
-                },
-                {
-                  "Entity": "Belgium",
-                  "Value_co2_emissions_kt_by_country": 96589.99634
-                },
-                {
-                  "Entity": "Belize",
-                  "Value_co2_emissions_kt_by_country": 460.0000083
-                },
-                {
-                  "Entity": "Benin",
-                  "Value_co2_emissions_kt_by_country": 4679.999828
-                },
-                {
-                  "Entity": "Bhutan",
-                  "Value_co2_emissions_kt_by_country": 670.0000167
-                },
-                {
-                  "Entity": "Bosnia and Herz.",
-                  "Value_co2_emissions_kt_by_country": 21850.00038
-                },
-                {
-                  "Entity": "Botswana",
-                  "Value_co2_emissions_kt_by_country": 5420.000076
-                },
-                {
-                  "Entity": "Brazil",
-                  "Value_co2_emissions_kt_by_country": 486839.9963
-                },
-                {
-                  "Entity": "Bulgaria",
-                  "Value_co2_emissions_kt_by_country": 39659.99985
-                },
-                {
-                  "Entity": "Burkina Faso",
-                  "Value_co2_emissions_kt_by_country": 3130.000114
-                },
-                {
-                  "Entity": "Burundi",
-                  "Value_co2_emissions_kt_by_country": 389.9999857
-                },
-                {
-                  "Entity": "Cambodia",
-                  "Value_co2_emissions_kt_by_country": 5739.999771
-                },
-                {
-                  "Entity": "Cameroon",
-                  "Value_co2_emissions_kt_by_country": 7550.000191
-                },
-                {
-                  "Entity": "Canada",
-                  "Value_co2_emissions_kt_by_country": 555659.9731
-                },
-                {
-                  "Entity": "Central African Rep.",
-                  "Value_co2_emissions_kt_by_country": 119.9999973
-                },
-                {
-                  "Entity": "Chad",
-                  "Value_co2_emissions_kt_by_country": 2190.000057
-                },
-                {"Entity": "Chile", "Value_co2_emissions_kt_by_country": 83000},
-                {
-                  "Entity": "China",
-                  "Value_co2_emissions_kt_by_country": 9984570.313
-                },
-                {
-                  "Entity": "Colombia",
-                  "Value_co2_emissions_kt_by_country": 76860.00061
-                },
-                {"Entity": "Congo", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Costa Rica",
-                  "Value_co2_emissions_kt_by_country": 7780.00021
-                },
-                {
-                  "Entity": "Croatia",
-                  "Value_co2_emissions_kt_by_country": 17010.00023
-                },
-                {
-                  "Entity": "Cuba",
-                  "Value_co2_emissions_kt_by_country": 28870.00084
-                },
-                {
-                  "Entity": "Cyprus",
-                  "Value_co2_emissions_kt_by_country": 6429.999828
-                },
-                {
-                  "Entity": "Czechia",
-                  "Value_co2_emissions_kt_by_country": 101150.0015
-                },
-                {
-                  "Entity": "Denmark",
-                  "Value_co2_emissions_kt_by_country": 39959.99908
-                },
-                {
-                  "Entity": "Djibouti",
-                  "Value_co2_emissions_kt_by_country": 560.0000024
-                },
-                {
-                  "Entity": "Dominican Rep.",
-                  "Value_co2_emissions_kt_by_country": 21290.00092
-                },
-                {
-                  "Entity": "Ecuador",
-                  "Value_co2_emissions_kt_by_country": 39700.00076
-                },
-                {"Entity": "Egypt", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "El Salvador",
-                  "Value_co2_emissions_kt_by_country": 6460.000038
-                },
-                {
-                  "Entity": "Eq. Guinea",
-                  "Value_co2_emissions_kt_by_country": 9180.000305
-                },
-                {
-                  "Entity": "Eritrea",
-                  "Value_co2_emissions_kt_by_country": 639.9999857
-                },
-                {
-                  "Entity": "Estonia",
-                  "Value_co2_emissions_kt_by_country": 19319.99969
-                },
-                {
-                  "Entity": "eSwatini",
-                  "Value_co2_emissions_kt_by_country": 750
-                },
-                {
-                  "Entity": "Ethiopia",
-                  "Value_co2_emissions_kt_by_country": 10079.99992
-                },
-                {
-                  "Entity": "Fiji",
-                  "Value_co2_emissions_kt_by_country": 1129.999995
-                },
-                {
-                  "Entity": "Finland",
-                  "Value_co2_emissions_kt_by_country": 50189.99863
-                },
-                {
-                  "Entity": "France",
-                  "Value_co2_emissions_kt_by_country": 338559.9976
-                },
-                {
-                  "Entity": "Gabon",
-                  "Value_co2_emissions_kt_by_country": 5789.999962
-                },
-                {"Entity": "Gambia", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Georgia",
-                  "Value_co2_emissions_kt_by_country": 7840.000153
-                },
-                {
-                  "Entity": "Germany",
-                  "Value_co2_emissions_kt_by_country": 776150.0244
-                },
-                {
-                  "Entity": "Ghana",
-                  "Value_co2_emissions_kt_by_country": 15630.00011
-                },
-                {
-                  "Entity": "Greece",
-                  "Value_co2_emissions_kt_by_country": 72480.00336
-                },
-                {
-                  "Entity": "Greenland",
-                  "Value_co2_emissions_kt_by_country": 319.9999928
-                },
-                {
-                  "Entity": "Guatemala",
-                  "Value_co2_emissions_kt_by_country": 13000
-                },
-                {
-                  "Entity": "Guinea",
-                  "Value_co2_emissions_kt_by_country": 2180.000067
-                },
-                {
-                  "Entity": "Guinea-Bissau",
-                  "Value_co2_emissions_kt_by_country": 250
-                },
-                {
-                  "Entity": "Guyana",
-                  "Value_co2_emissions_kt_by_country": 1980.000019
-                },
-                {
-                  "Entity": "Haiti",
-                  "Value_co2_emissions_kt_by_country": 2650.000095
-                },
-                {
-                  "Entity": "Honduras",
-                  "Value_co2_emissions_kt_by_country": 9369.999886
-                },
-                {
-                  "Entity": "Hungary",
-                  "Value_co2_emissions_kt_by_country": 40759.99832
-                },
-                {
-                  "Entity": "Iceland",
-                  "Value_co2_emissions_kt_by_country": 2029.999971
-                },
-                {
-                  "Entity": "India",
-                  "Value_co2_emissions_kt_by_country": 1972430.054
-                },
-                {
-                  "Entity": "Indonesia",
-                  "Value_co2_emissions_kt_by_country": 447940.0024
-                },
-                {
-                  "Entity": "Iraq",
-                  "Value_co2_emissions_kt_by_country": 139100.0061
-                },
-                {
-                  "Entity": "Ireland",
-                  "Value_co2_emissions_kt_by_country": 35709.99908
-                },
-                {
-                  "Entity": "Israel",
-                  "Value_co2_emissions_kt_by_country": 67000
-                },
-                {
-                  "Entity": "Italy",
-                  "Value_co2_emissions_kt_by_country": 346459.9915
-                },
-                {
-                  "Entity": "Jamaica",
-                  "Value_co2_emissions_kt_by_country": 7400.000095
-                },
-                {
-                  "Entity": "Japan",
-                  "Value_co2_emissions_kt_by_country": 1262780.029
-                },
-                {
-                  "Entity": "Jordan",
-                  "Value_co2_emissions_kt_by_country": 23799.99924
-                },
-                {
-                  "Entity": "Kazakhstan",
-                  "Value_co2_emissions_kt_by_country": 260010.0098
-                },
-                {
-                  "Entity": "Kenya",
-                  "Value_co2_emissions_kt_by_country": 14100.00038
-                },
-                {
-                  "Entity": "Kuwait",
-                  "Value_co2_emissions_kt_by_country": 87360.00061
-                },
-                {
-                  "Entity": "Kyrgyzstan",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {
-                  "Entity": "Latvia",
-                  "Value_co2_emissions_kt_by_country": 7449.999809
-                },
-                {
-                  "Entity": "Lebanon",
-                  "Value_co2_emissions_kt_by_country": 23239.99977
-                },
-                {
-                  "Entity": "Lesotho",
-                  "Value_co2_emissions_kt_by_country": 610.0000143
-                },
-                {
-                  "Entity": "Liberia",
-                  "Value_co2_emissions_kt_by_country": 920.0000167
-                },
-                {
-                  "Entity": "Libya",
-                  "Value_co2_emissions_kt_by_country": 58610.00061
-                },
-                {
-                  "Entity": "Lithuania",
-                  "Value_co2_emissions_kt_by_country": 11329.99992
-                },
-                {
-                  "Entity": "Luxembourg",
-                  "Value_co2_emissions_kt_by_country": 10149.99962
-                },
-                {
-                  "Entity": "Madagascar",
-                  "Value_co2_emissions_kt_by_country": 2930.000067
-                },
-                {
-                  "Entity": "Malawi",
-                  "Value_co2_emissions_kt_by_country": 980.0000191
-                },
-                {
-                  "Entity": "Malaysia",
-                  "Value_co2_emissions_kt_by_country": 223660.0037
-                },
-                {
-                  "Entity": "Mali",
-                  "Value_co2_emissions_kt_by_country": 3220.000029
-                },
-                {
-                  "Entity": "Mauritania",
-                  "Value_co2_emissions_kt_by_country": 2589.999914
-                },
-                {
-                  "Entity": "Mexico",
-                  "Value_co2_emissions_kt_by_country": 475739.9902
-                },
-                {
-                  "Entity": "Mongolia",
-                  "Value_co2_emissions_kt_by_country": 18379.99916
-                },
-                {
-                  "Entity": "Montenegro",
-                  "Value_co2_emissions_kt_by_country": 2269.999981
-                },
-                {
-                  "Entity": "Morocco",
-                  "Value_co2_emissions_kt_by_country": 57590.00015
-                },
-                {
-                  "Entity": "Mozambique",
-                  "Value_co2_emissions_kt_by_country": 4199.999809
-                },
-                {
-                  "Entity": "Myanmar",
-                  "Value_co2_emissions_kt_by_country": 13600.00038
-                },
-                {
-                  "Entity": "Namibia",
-                  "Value_co2_emissions_kt_by_country": 3789.999962
-                },
-                {
-                  "Entity": "Nepal",
-                  "Value_co2_emissions_kt_by_country": 6090.000153
-                },
-                {
-                  "Entity": "Netherlands",
-                  "Value_co2_emissions_kt_by_country": 157089.9963
-                },
-                {
-                  "Entity": "New Caledonia",
-                  "Value_co2_emissions_kt_by_country": 3861.351
-                },
-                {
-                  "Entity": "New Zealand",
-                  "Value_co2_emissions_kt_by_country": 31889.99939
-                },
-                {
-                  "Entity": "Nicaragua",
-                  "Value_co2_emissions_kt_by_country": 4469.99979
-                },
-                {
-                  "Entity": "Niger",
-                  "Value_co2_emissions_kt_by_country": 1970.000029
-                },
-                {
-                  "Entity": "Nigeria",
-                  "Value_co2_emissions_kt_by_country": 108129.9973
-                },
-                {
-                  "Entity": "North Macedonia",
-                  "Value_co2_emissions_kt_by_country": 8140.000343
-                },
-                {
-                  "Entity": "Norway",
-                  "Value_co2_emissions_kt_by_country": 39500
-                },
-                {
-                  "Entity": "Oman",
-                  "Value_co2_emissions_kt_by_country": 63009.99832
-                },
-                {
-                  "Entity": "Pakistan",
-                  "Value_co2_emissions_kt_by_country": 146059.9976
-                },
-                {
-                  "Entity": "Panama",
-                  "Value_co2_emissions_kt_by_country": 10250
-                },
-                {
-                  "Entity": "Papua New Guinea",
-                  "Value_co2_emissions_kt_by_country": 5239.999771
-                },
-                {
-                  "Entity": "Paraguay",
-                  "Value_co2_emissions_kt_by_country": 5300.000191
-                },
-                {"Entity": "Peru", "Value_co2_emissions_kt_by_country": 49750},
-                {
-                  "Entity": "Philippines",
-                  "Value_co2_emissions_kt_by_country": 95500
-                },
-                {
-                  "Entity": "Poland",
-                  "Value_co2_emissions_kt_by_country": 298299.9878
-                },
-                {
-                  "Entity": "Portugal",
-                  "Value_co2_emissions_kt_by_country": 46560.00137
-                },
-                {
-                  "Entity": "Puerto Rico",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {
-                  "Entity": "Qatar",
-                  "Value_co2_emissions_kt_by_country": 76169.99817
-                },
-                {
-                  "Entity": "Romania",
-                  "Value_co2_emissions_kt_by_country": 72089.99634
-                },
-                {
-                  "Entity": "Rwanda",
-                  "Value_co2_emissions_kt_by_country": 810.0000024
-                },
-                {
-                  "Entity": "Saudi Arabia",
-                  "Value_co2_emissions_kt_by_country": 503209.9915
-                },
-                {
-                  "Entity": "Senegal",
-                  "Value_co2_emissions_kt_by_country": 8010.000229
-                },
-                {
-                  "Entity": "Serbia",
-                  "Value_co2_emissions_kt_by_country": 46470.00122
-                },
-                {
-                  "Entity": "Sierra Leone",
-                  "Value_co2_emissions_kt_by_country": 1039.999962
-                },
-                {"Entity": "Slovakia", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Slovenia",
-                  "Value_co2_emissions_kt_by_country": 14550.00019
-                },
-                {
-                  "Entity": "Solomon Is.",
-                  "Value_co2_emissions_kt_by_country": 389.9999857
-                },
-                {
-                  "Entity": "Somalia",
-                  "Value_co2_emissions_kt_by_country": 649.9999762
-                },
-                {
-                  "Entity": "South Africa",
-                  "Value_co2_emissions_kt_by_country": 436920.0134
-                },
-                {
-                  "Entity": "S. Sudan",
-                  "Value_co2_emissions_kt_by_country": 1450.000048
-                },
-                {
-                  "Entity": "Spain",
-                  "Value_co2_emissions_kt_by_country": 242809.9976
-                },
-                {
-                  "Entity": "Sri Lanka",
-                  "Value_co2_emissions_kt_by_country": 14479.99954
-                },
-                {
-                  "Entity": "Sudan",
-                  "Value_co2_emissions_kt_by_country": 15220.00027
-                },
-                {
-                  "Entity": "Suriname",
-                  "Value_co2_emissions_kt_by_country": 2289.999962
-                },
-                {
-                  "Entity": "Sweden",
-                  "Value_co2_emissions_kt_by_country": 40540.00092
-                },
-                {
-                  "Entity": "Switzerland",
-                  "Value_co2_emissions_kt_by_country": 43529.99878
-                },
-                {
-                  "Entity": "Tajikistan",
-                  "Value_co2_emissions_kt_by_country": 3200.000048
-                },
-                {
-                  "Entity": "Thailand",
-                  "Value_co2_emissions_kt_by_country": 260700.0122
-                },
-                {"Entity": "Togo", "Value_co2_emissions_kt_by_country": 1750},
-                {
-                  "Entity": "Trinidad and Tobago",
-                  "Value_co2_emissions_kt_by_country": 22209.99908
-                },
-                {
-                  "Entity": "Tunisia",
-                  "Value_co2_emissions_kt_by_country": 27850.00038
-                },
-                {"Entity": "Turkey", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Turkmenistan",
-                  "Value_co2_emissions_kt_by_country": 70220.00122
-                },
-                {
-                  "Entity": "Uganda",
-                  "Value_co2_emissions_kt_by_country": 3690.000057
-                },
-                {
-                  "Entity": "Ukraine",
-                  "Value_co2_emissions_kt_by_country": 270269.989
-                },
-                {
-                  "Entity": "United Arab Emirates",
-                  "Value_co2_emissions_kt_by_country": 184470.0012
-                },
-                {
-                  "Entity": "United Kingdom",
-                  "Value_co2_emissions_kt_by_country": 453760.0098
-                },
-                {
-                  "Entity": "United States of America",
-                  "Value_co2_emissions_kt_by_country": 5092100.098
-                },
-                {
-                  "Entity": "Uruguay",
-                  "Value_co2_emissions_kt_by_country": 7360.000134
-                },
-                {
-                  "Entity": "Uzbekistan",
-                  "Value_co2_emissions_kt_by_country": 111860.0006
-                },
-                {
-                  "Entity": "Vanuatu",
-                  "Value_co2_emissions_kt_by_country": 109.9999994
-                },
-                {"Entity": "Yemen", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Zambia",
-                  "Value_co2_emissions_kt_by_country": 4239.999771
-                },
-                {
-                  "Entity": "Zimbabwe",
-                  "Value_co2_emissions_kt_by_country": 12279.99973
-                },
-                {"Entity": "Tanzania", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "W. Sahara", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Dem. Rep. Congo",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "Russia", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Falkland Is.",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {
-                  "Entity": "Fr. S. Antarctic Lands",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {
-                  "Entity": "Timor-Leste",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "Bolivia", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Venezuela", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Côte d'Ivoire",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "Palestine", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Laos", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Vietnam", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "North Korea",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {
-                  "Entity": "South Korea",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "Iran", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Syria", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Moldova", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Taiwan", "Value_co2_emissions_kt_by_country": 0},
-                {"Entity": "Brunei", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Antarctica",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "N. Cyprus", "Value_co2_emissions_kt_by_country": 0},
-                {
-                  "Entity": "Somaliland",
-                  "Value_co2_emissions_kt_by_country": 0
-                },
-                {"Entity": "Kosovo", "Value_co2_emissions_kt_by_country": 0}
-              ]
+                "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_ocean"
+                }
             },
-            "key": "Entity",
-            "fields": ["Value_co2_emissions_kt_by_country"]
-          }
-        }
-      ],
-      "mark": {"type": "geoshape"},
-      "encoding": {
-        "color": {
-          "field": "Value_co2_emissions_kt_by_country",
-          "type": "quantitative",
-          "scale": {"type": "symlog", "scheme": "reds"},
-          "title": "CO2 Emissions per Capita (kt)"
+            "mark": {
+                "type": "geoshape",
+                "fill": "#29678d",
+                "stroke": null
+            }
         },
-        "tooltip": [
-          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-          {
-            "field": "Value_co2_emissions_kt_by_country",
-            "type": "quantitative",
-            "title": "CO2 Emissions (kt)",
-            "format": ",.2f"
-          }
-        ]
-      }
-    }
-  ],
-  "config": {}
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "lon": -180,
+                        "lat": 0
+                    },
+                    {
+                        "lon": -150,
+                        "lat": 0
+                    },
+                    {
+                        "lon": -120,
+                        "lat": 0
+                    },
+                    {
+                        "lon": -90,
+                        "lat": 0
+                    },
+                    {
+                        "lon": -60,
+                        "lat": 0
+                    },
+                    {
+                        "lon": -30,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 0,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 30,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 60,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 90,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 120,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 150,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 180,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 0,
+                        "lat": -90
+                    },
+                    {
+                        "lon": 0,
+                        "lat": -60
+                    },
+                    {
+                        "lon": 0,
+                        "lat": -30
+                    },
+                    {
+                        "lon": 0,
+                        "lat": 0
+                    },
+                    {
+                        "lon": 0,
+                        "lat": 30
+                    },
+                    {
+                        "lon": 0,
+                        "lat": 60
+                    },
+                    {
+                        "lon": 0,
+                        "lat": 90
+                    }
+                ]
+            },
+            "mark": {
+                "type": "rule",
+                "color": "#ccc"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.NAME",
+                    "from": {
+                        "data": {
+                            "values": [
+        {
+            "Entity": "Afghanistan",
+            "Value_co2_emissions_kt_by_country": 5989.999771
+        },
+        {
+            "Entity": "Albania",
+            "Value_co2_emissions_kt_by_country": 4440.000057
+        },
+        {
+            "Entity": "Algeria",
+            "Value_co2_emissions_kt_by_country": 139020.0043
+        },
+        {
+            "Entity": "Angola",
+            "Value_co2_emissions_kt_by_country": 26959.99908
+        },
+        {
+            "Entity": "Argentina",
+            "Value_co2_emissions_kt_by_country": 183250.0
+        },
+        {
+            "Entity": "Armenia",
+            "Value_co2_emissions_kt_by_country": 5500.0
+        },
+        {
+            "Entity": "Australia",
+            "Value_co2_emissions_kt_by_country": 380279.9988
+        },
+        {
+            "Entity": "Austria",
+            "Value_co2_emissions_kt_by_country": 65750.0
+        },
+        {
+            "Entity": "Azerbaijan",
+            "Value_co2_emissions_kt_by_country": 30940.00053
+        },
+        {
+            "Entity": "Bangladesh",
+            "Value_co2_emissions_kt_by_country": 60599.99847
+        },
+        {
+            "Entity": "Belarus",
+            "Value_co2_emissions_kt_by_country": 59990.00168
+        },
+        {
+            "Entity": "Belgium",
+            "Value_co2_emissions_kt_by_country": 96589.99634
+        },
+        {
+            "Entity": "Belize",
+            "Value_co2_emissions_kt_by_country": 460.0000083
+        },
+        {
+            "Entity": "Benin",
+            "Value_co2_emissions_kt_by_country": 4679.999828
+        },
+        {
+            "Entity": "Bhutan",
+            "Value_co2_emissions_kt_by_country": 670.0000167
+        },
+        {
+            "Entity": "Bosnia and Herz.",
+            "Value_co2_emissions_kt_by_country": 21850.00038
+        },
+        {
+            "Entity": "Botswana",
+            "Value_co2_emissions_kt_by_country": 5420.000076
+        },
+        {
+            "Entity": "Brazil",
+            "Value_co2_emissions_kt_by_country": 486839.9963
+        },
+        {
+            "Entity": "Bulgaria",
+            "Value_co2_emissions_kt_by_country": 39659.99985
+        },
+        {
+            "Entity": "Burkina Faso",
+            "Value_co2_emissions_kt_by_country": 3130.000114
+        },
+        {
+            "Entity": "Burundi",
+            "Value_co2_emissions_kt_by_country": 389.9999857
+        },
+        {
+            "Entity": "Cambodia",
+            "Value_co2_emissions_kt_by_country": 5739.999771
+        },
+        {
+            "Entity": "Cameroon",
+            "Value_co2_emissions_kt_by_country": 7550.000191
+        },
+        {
+            "Entity": "Canada",
+            "Value_co2_emissions_kt_by_country": 555659.9731
+        },
+        {
+            "Entity": "Central African Rep.",
+            "Value_co2_emissions_kt_by_country": 119.9999973
+        },
+        {
+            "Entity": "Chad",
+            "Value_co2_emissions_kt_by_country": 2190.000057
+        },
+        {
+            "Entity": "Chile",
+            "Value_co2_emissions_kt_by_country": 83000.0
+        },
+        {
+            "Entity": "China",
+            "Value_co2_emissions_kt_by_country": 9984570.313
+        },
+        {
+            "Entity": "Colombia",
+            "Value_co2_emissions_kt_by_country": 76860.00061
+        },
+        {
+            "Entity": "Costa Rica",
+            "Value_co2_emissions_kt_by_country": 7780.00021
+        },
+        {
+            "Entity": "Croatia",
+            "Value_co2_emissions_kt_by_country": 17010.00023
+        },
+        {
+            "Entity": "Cuba",
+            "Value_co2_emissions_kt_by_country": 28870.00084
+        },
+        {
+            "Entity": "Cyprus",
+            "Value_co2_emissions_kt_by_country": 6429.999828
+        },
+        {
+            "Entity": "Czechia",
+            "Value_co2_emissions_kt_by_country": 101150.0015
+        },
+        {
+            "Entity": "Denmark",
+            "Value_co2_emissions_kt_by_country": 39959.99908
+        },
+        {
+            "Entity": "Djibouti",
+            "Value_co2_emissions_kt_by_country": 560.0000024
+        },
+        {
+            "Entity": "Dominican Rep.",
+            "Value_co2_emissions_kt_by_country": 21290.00092
+        },
+        {
+            "Entity": "Ecuador",
+            "Value_co2_emissions_kt_by_country": 39700.00076
+        },
+        {
+            "Entity": "El Salvador",
+            "Value_co2_emissions_kt_by_country": 6460.000038
+        },
+        {
+            "Entity": "Eq. Guinea",
+            "Value_co2_emissions_kt_by_country": 9180.000305
+        },
+        {
+            "Entity": "Eritrea",
+            "Value_co2_emissions_kt_by_country": 639.9999857
+        },
+        {
+            "Entity": "Estonia",
+            "Value_co2_emissions_kt_by_country": 19319.99969
+        },
+        {
+            "Entity": "eSwatini",
+            "Value_co2_emissions_kt_by_country": 750.0
+        },
+        {
+            "Entity": "Ethiopia",
+            "Value_co2_emissions_kt_by_country": 10079.99992
+        },
+        {
+            "Entity": "Fiji",
+            "Value_co2_emissions_kt_by_country": 1129.999995
+        },
+        {
+            "Entity": "Finland",
+            "Value_co2_emissions_kt_by_country": 50189.99863
+        },
+        {
+            "Entity": "France",
+            "Value_co2_emissions_kt_by_country": 338559.9976
+        },
+        {
+            "Entity": "Gabon",
+            "Value_co2_emissions_kt_by_country": 5789.999962
+        },
+        {
+            "Entity": "Georgia",
+            "Value_co2_emissions_kt_by_country": 7840.000153
+        },
+        {
+            "Entity": "Germany",
+            "Value_co2_emissions_kt_by_country": 776150.0244
+        },
+        {
+            "Entity": "Ghana",
+            "Value_co2_emissions_kt_by_country": 15630.00011
+        },
+        {
+            "Entity": "Greece",
+            "Value_co2_emissions_kt_by_country": 72480.00336
+        },
+        {
+            "Entity": "Greenland",
+            "Value_co2_emissions_kt_by_country": 319.9999928
+        },
+        {
+            "Entity": "Guatemala",
+            "Value_co2_emissions_kt_by_country": 13000.0
+        },
+        {
+            "Entity": "Guinea",
+            "Value_co2_emissions_kt_by_country": 2180.000067
+        },
+        {
+            "Entity": "Guinea-Bissau",
+            "Value_co2_emissions_kt_by_country": 250.0
+        },
+        {
+            "Entity": "Guyana",
+            "Value_co2_emissions_kt_by_country": 1980.000019
+        },
+        {
+            "Entity": "Haiti",
+            "Value_co2_emissions_kt_by_country": 2650.000095
+        },
+        {
+            "Entity": "Honduras",
+            "Value_co2_emissions_kt_by_country": 9369.999886
+        },
+        {
+            "Entity": "Hungary",
+            "Value_co2_emissions_kt_by_country": 40759.99832
+        },
+        {
+            "Entity": "Iceland",
+            "Value_co2_emissions_kt_by_country": 2029.999971
+        },
+        {
+            "Entity": "India",
+            "Value_co2_emissions_kt_by_country": 1972430.054
+        },
+        {
+            "Entity": "Indonesia",
+            "Value_co2_emissions_kt_by_country": 447940.0024
+        },
+        {
+            "Entity": "Iraq",
+            "Value_co2_emissions_kt_by_country": 139100.0061
+        },
+        {
+            "Entity": "Ireland",
+            "Value_co2_emissions_kt_by_country": 35709.99908
+        },
+        {
+            "Entity": "Israel",
+            "Value_co2_emissions_kt_by_country": 67000.0
+        },
+        {
+            "Entity": "Italy",
+            "Value_co2_emissions_kt_by_country": 346459.9915
+        },
+        {
+            "Entity": "Jamaica",
+            "Value_co2_emissions_kt_by_country": 7400.000095
+        },
+        {
+            "Entity": "Japan",
+            "Value_co2_emissions_kt_by_country": 1262780.029
+        },
+        {
+            "Entity": "Jordan",
+            "Value_co2_emissions_kt_by_country": 23799.99924
+        },
+        {
+            "Entity": "Kazakhstan",
+            "Value_co2_emissions_kt_by_country": 260010.0098
+        },
+        {
+            "Entity": "Kenya",
+            "Value_co2_emissions_kt_by_country": 14100.00038
+        },
+        {
+            "Entity": "Kuwait",
+            "Value_co2_emissions_kt_by_country": 87360.00061
+        },
+        {
+            "Entity": "Latvia",
+            "Value_co2_emissions_kt_by_country": 7449.999809
+        },
+        {
+            "Entity": "Lebanon",
+            "Value_co2_emissions_kt_by_country": 23239.99977
+        },
+        {
+            "Entity": "Lesotho",
+            "Value_co2_emissions_kt_by_country": 610.0000143
+        },
+        {
+            "Entity": "Liberia",
+            "Value_co2_emissions_kt_by_country": 920.0000167
+        },
+        {
+            "Entity": "Libya",
+            "Value_co2_emissions_kt_by_country": 58610.00061
+        },
+        {
+            "Entity": "Lithuania",
+            "Value_co2_emissions_kt_by_country": 11329.99992
+        },
+        {
+            "Entity": "Luxembourg",
+            "Value_co2_emissions_kt_by_country": 10149.99962
+        },
+        {
+            "Entity": "Madagascar",
+            "Value_co2_emissions_kt_by_country": 2930.000067
+        },
+        {
+            "Entity": "Malawi",
+            "Value_co2_emissions_kt_by_country": 980.0000191
+        },
+        {
+            "Entity": "Malaysia",
+            "Value_co2_emissions_kt_by_country": 223660.0037
+        },
+        {
+            "Entity": "Mali",
+            "Value_co2_emissions_kt_by_country": 3220.000029
+        },
+        {
+            "Entity": "Mauritania",
+            "Value_co2_emissions_kt_by_country": 2589.999914
+        },
+        {
+            "Entity": "Mexico",
+            "Value_co2_emissions_kt_by_country": 475739.9902
+        },
+        {
+            "Entity": "Mongolia",
+            "Value_co2_emissions_kt_by_country": 18379.99916
+        },
+        {
+            "Entity": "Montenegro",
+            "Value_co2_emissions_kt_by_country": 2269.999981
+        },
+        {
+            "Entity": "Morocco",
+            "Value_co2_emissions_kt_by_country": 57590.00015
+        },
+        {
+            "Entity": "Mozambique",
+            "Value_co2_emissions_kt_by_country": 4199.999809
+        },
+        {
+            "Entity": "Myanmar",
+            "Value_co2_emissions_kt_by_country": 13600.00038
+        },
+        {
+            "Entity": "Namibia",
+            "Value_co2_emissions_kt_by_country": 3789.999962
+        },
+        {
+            "Entity": "Nepal",
+            "Value_co2_emissions_kt_by_country": 6090.000153
+        },
+        {
+            "Entity": "Netherlands",
+            "Value_co2_emissions_kt_by_country": 157089.9963
+        },
+        {
+            "Entity": "New Caledonia",
+            "Value_co2_emissions_kt_by_country": 3861.351
+        },
+        {
+            "Entity": "New Zealand",
+            "Value_co2_emissions_kt_by_country": 31889.99939
+        },
+        {
+            "Entity": "Nicaragua",
+            "Value_co2_emissions_kt_by_country": 4469.99979
+        },
+        {
+            "Entity": "Niger",
+            "Value_co2_emissions_kt_by_country": 1970.000029
+        },
+        {
+            "Entity": "Nigeria",
+            "Value_co2_emissions_kt_by_country": 108129.9973
+        },
+        {
+            "Entity": "North Macedonia",
+            "Value_co2_emissions_kt_by_country": 8140.000343
+        },
+        {
+            "Entity": "Norway",
+            "Value_co2_emissions_kt_by_country": 39500.0
+        },
+        {
+            "Entity": "Oman",
+            "Value_co2_emissions_kt_by_country": 63009.99832
+        },
+        {
+            "Entity": "Pakistan",
+            "Value_co2_emissions_kt_by_country": 146059.9976
+        },
+        {
+            "Entity": "Panama",
+            "Value_co2_emissions_kt_by_country": 10250.0
+        },
+        {
+            "Entity": "Papua New Guinea",
+            "Value_co2_emissions_kt_by_country": 5239.999771
+        },
+        {
+            "Entity": "Paraguay",
+            "Value_co2_emissions_kt_by_country": 5300.000191
+        },
+        {
+            "Entity": "Peru",
+            "Value_co2_emissions_kt_by_country": 49750.0
+        },
+        {
+            "Entity": "Philippines",
+            "Value_co2_emissions_kt_by_country": 95500.0
+        },
+        {
+            "Entity": "Poland",
+            "Value_co2_emissions_kt_by_country": 298299.9878
+        },
+        {
+            "Entity": "Portugal",
+            "Value_co2_emissions_kt_by_country": 46560.00137
+        },
+        {
+            "Entity": "Qatar",
+            "Value_co2_emissions_kt_by_country": 76169.99817
+        },
+        {
+            "Entity": "Romania",
+            "Value_co2_emissions_kt_by_country": 72089.99634
+        },
+        {
+            "Entity": "Rwanda",
+            "Value_co2_emissions_kt_by_country": 810.0000024
+        },
+        {
+            "Entity": "Saudi Arabia",
+            "Value_co2_emissions_kt_by_country": 503209.9915
+        },
+        {
+            "Entity": "Senegal",
+            "Value_co2_emissions_kt_by_country": 8010.000229
+        },
+        {
+            "Entity": "Serbia",
+            "Value_co2_emissions_kt_by_country": 46470.00122
+        },
+        {
+            "Entity": "Sierra Leone",
+            "Value_co2_emissions_kt_by_country": 1039.999962
+        },
+        {
+            "Entity": "Slovenia",
+            "Value_co2_emissions_kt_by_country": 14550.00019
+        },
+        {
+            "Entity": "Solomon Is.",
+            "Value_co2_emissions_kt_by_country": 389.9999857
+        },
+        {
+            "Entity": "Somalia",
+            "Value_co2_emissions_kt_by_country": 649.9999762
+        },
+        {
+            "Entity": "South Africa",
+            "Value_co2_emissions_kt_by_country": 436920.0134
+        },
+        {
+            "Entity": "S. Sudan",
+            "Value_co2_emissions_kt_by_country": 1450.000048
+        },
+        {
+            "Entity": "Spain",
+            "Value_co2_emissions_kt_by_country": 242809.9976
+        },
+        {
+            "Entity": "Sri Lanka",
+            "Value_co2_emissions_kt_by_country": 14479.99954
+        },
+        {
+            "Entity": "Sudan",
+            "Value_co2_emissions_kt_by_country": 15220.00027
+        },
+        {
+            "Entity": "Suriname",
+            "Value_co2_emissions_kt_by_country": 2289.999962
+        },
+        {
+            "Entity": "Sweden",
+            "Value_co2_emissions_kt_by_country": 40540.00092
+        },
+        {
+            "Entity": "Switzerland",
+            "Value_co2_emissions_kt_by_country": 43529.99878
+        },
+        {
+            "Entity": "Tajikistan",
+            "Value_co2_emissions_kt_by_country": 3200.000048
+        },
+        {
+            "Entity": "Thailand",
+            "Value_co2_emissions_kt_by_country": 260700.0122
+        },
+        {
+            "Entity": "Togo",
+            "Value_co2_emissions_kt_by_country": 1750.0
+        },
+        {
+            "Entity": "Trinidad and Tobago",
+            "Value_co2_emissions_kt_by_country": 22209.99908
+        },
+        {
+            "Entity": "Tunisia",
+            "Value_co2_emissions_kt_by_country": 27850.00038
+        },
+        {
+            "Entity": "Turkmenistan",
+            "Value_co2_emissions_kt_by_country": 70220.00122
+        },
+        {
+            "Entity": "Uganda",
+            "Value_co2_emissions_kt_by_country": 3690.000057
+        },
+        {
+            "Entity": "Ukraine",
+            "Value_co2_emissions_kt_by_country": 270269.989
+        },
+        {
+            "Entity": "United Arab Emirates",
+            "Value_co2_emissions_kt_by_country": 184470.0012
+        },
+        {
+            "Entity": "United Kingdom",
+            "Value_co2_emissions_kt_by_country": 453760.0098
+        },
+        {
+            "Entity": "United States of America",
+            "Value_co2_emissions_kt_by_country": 5092100.098
+        },
+        {
+            "Entity": "Uruguay",
+            "Value_co2_emissions_kt_by_country": 7360.000134
+        },
+        {
+            "Entity": "Uzbekistan",
+            "Value_co2_emissions_kt_by_country": 111860.0006
+        },
+        {
+            "Entity": "Vanuatu",
+            "Value_co2_emissions_kt_by_country": 109.9999994
+        },
+        {
+            "Entity": "Zambia",
+            "Value_co2_emissions_kt_by_country": 4239.999771
+        },
+        {
+            "Entity": "Zimbabwe",
+            "Value_co2_emissions_kt_by_country": 12279.99973
+        }
+    ]
+                        },
+                        "key": "Entity",
+                        "fields": [
+                            "Value_co2_emissions_kt_by_country"
+                        ]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "geoshape"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Value_co2_emissions_kt_by_country",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "symlog",
+                        "scheme": "reds"
+                    },
+                    "title": "CO2 Emissions per Capita"
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.NAME",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Value_co2_emissions_kt_by_country",
+                        "type": "quantitative",
+                        "title": "CO2 Emissions (kt)",
+                        "format": ",.2f"
+                    }
+                ]
+            }
+        }
+    ]
 }
