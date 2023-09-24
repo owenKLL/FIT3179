@@ -707,7 +707,7 @@
           "field": "Value_co2_emissions_kt_by_country",
           "type": "quantitative",
           "scale": {"type": "symlog", "scheme": "reds"},
-          "title": "CO2 Emissions per Capita"
+          "title": "CO2 Emissions per Capita (kt)"
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
