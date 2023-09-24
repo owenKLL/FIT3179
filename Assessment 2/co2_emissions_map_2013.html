@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 Emissions Map 2013</title>
+    <!-- Importing the Vega-Lite and Vega-Embed libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <!-- Div to hold the Vega-Lite visualization -->
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+        // Embedding the Vega-Lite visualization into the div
+        var spec = "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/CO2Emissions_2013.vl.json";
+        vegaEmbed("#vis", spec);
+    </script>
+</body>
+</html>
