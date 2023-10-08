@@ -1,0 +1,158 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 360,
+  "height": 360,
+  "title": "GDP vs Energy Consumption per Capita",
+  "data": {
+    "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/cleaned_global-data-on-sustainable-energy_with_continent.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year: "
+      }
+    },
+    {
+      "name": "Continent_selection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "name": "Select Continent: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "median",
+          "field": "Renewable energy share in the total final energy consumption (%)",
+          "as": "continent_median_renewables"
+        }
+      ],
+      "groupby": ["Continent"]
+    },
+    {
+      "calculate": "isValid(datum['Renewable energy share in the total final energy consumption (%)']) ? datum['Renewables (% equivalent primary energy)'] : datum.continent_median_renewables",
+      "as": "renewable_energy_or_median"
+    },
+    {"filter": "datum.Year == Year_selection"},
+    {
+      "filter": "datum.Continent == Continent_selection || Continent_selection == 'All'"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "circle",
+      "selection": {"highlight": {"type": "single", "fields": ["Entity"]}},
+      "encoding": {
+        "x": {
+          "field": "gdp_per_capita",
+          "type": "quantitative",
+          "title": "GDP Per Capita",
+          "axis": {"tickCount": 4},
+          "scale": {"type": "log", "domain": [100, 150000]}
+        },
+        "y": {
+          "field": "Primary energy consumption per capita (kWh/person)",
+          "type": "quantitative",
+          "title": "Energy Consumption Per Cap. (kWh/person)",
+          "axis": {"tickCount": 4},
+          "scale": {"type": "log", "domain": [100, 200000]}
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Africa",
+              "Asia",
+              "Europe",
+              "North America",
+              "Oceania",
+              "South America"
+            ],
+        "range": [
+          "#72aee6",
+          "#ffad33",
+          "#88d98b",
+          "#ff6666",
+          "#aa80ff",
+          "#d49a6a"
+        ]
+          },
+          "legend": {"title": "Continent"}
+        },
+        "size": {
+          "field": "renewable_energy_or_median",
+          "type": "quantitative",
+          "title": "(%) Energy from Renewables",
+          "scale": {"domain": [0, 100], "range": [20, 500]}
+        },
+        "opacity": {
+          "condition": {"selection": "highlight", "value": 1},
+          "value": 0.4
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal", "title": "Country: "},
+          {
+            "field": "gdp_per_capita",
+            "type": "quantitative",
+            "title": "GDP Per Capita: ",
+            "format": ".0f"
+          },
+          {
+            "field": "Primary energy consumption per capita (kWh/person)",
+            "type": "quantitative",
+            "title": "Energy Consumption: ",
+            "format": ".0f"
+          },
+          {"field": "Continent", "type": "nominal", "title": "Continent: "},
+          {
+            "field": "Renewables (% equivalent primary energy)",
+            "type": "quantitative",
+            "title": "(%) Energy from Renewables",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "transform": [
+        {
+          "filter": "datum.Entity === 'Australia'"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "gdp_per_capita",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Primary energy consumption per capita (kWh/person)",
+          "type": "quantitative"
+        },
+        "text": {"value": "Australia"},
+        "color": {"value": "black"},
+        "fontWeight": {"value": "bold"}
+      }
+    }
+  ],
+  "config": {}
+}
