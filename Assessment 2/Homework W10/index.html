@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Data Visualization</title>
+</head>
+
+<body>
+    <header>
+        <h1>Global CO2 Emissions Visualisation</h1>
+    </header>
+    <main>
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-2"> 
+                <section id="vis1" class="visualization">
+                    <h2>Global CO2 Emissions per Capita (2013)</h2>
+                    <div id="vis1-container"></div>
+                    <script type="text/javascript">
+                        var spec = "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/CO2Emissions_2013.vl.json";
+                        vegaEmbed("#vis1-container", spec);
+                    </script>
+                </section>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2"> 
+                <section id="vis2" class="visualization">
+                    <h2>GDP vs Primary Energy Consumption per Capita</h2>
+                    <div id="vis2-container"></div>
+                    <script type="text/javascript">
+                        var spec = "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/GDPPLOT.vl.json";
+                        vegaEmbed("#vis2-container", spec);
+                    </script>
+                </section>
+            </div>
+        </div>       
+    </main>
+    <footer>
+        <p>Data visualisation created for FIT3179</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
