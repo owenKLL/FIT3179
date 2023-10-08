@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Global CO2 Emissions per Capita (2013)",
     "width": 800,
     "height": 400,
     "projection": {
