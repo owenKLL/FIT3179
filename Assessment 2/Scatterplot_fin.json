@@ -86,21 +86,21 @@
               "Oceania",
               "South America"
             ],
-            "range": [
-              "#72aee6",
-              "#ffad33",
-              "#88d98b",
-              "#ff6666",
-              "#aa80ff",
-              "#d49a6a"
-            ]
+        "range": [
+          "#72aee6",
+          "#ffad33",
+          "#88d98b",
+          "#ff6666",
+          "#aa80ff",
+          "#d49a6a"
+        ]
           },
           "legend": {"title": "Continent"}
         },
         "size": {
           "field": "renewable_energy_or_median",
           "type": "quantitative",
-          "title": "(%) Energy from Renewables",
+          "title": "(%) Renewable Energy",
           "scale": {"domain": [0, 100], "range": [20, 500]}
         },
         "opacity": {
@@ -125,30 +125,45 @@
           {
             "field": "Renewables (% equivalent primary energy)",
             "type": "quantitative",
-            "title": "(%) Energy from Renewables",
+            "title": "Renewable Energy (%): ",
             "format": ".0f"
           }
         ]
       }
     },
-    {
-      "mark": "text",
-      "transform": [
-        {
-          "filter": "datum.Entity === 'Australia' || datum.Entity === 'China' || datum.Entity === 'United States' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria' || datum.Entity === 'Brazil'"
-        }
-      ],
-      "encoding": {
-        "x": {"field": "gdp_per_capita", "type": "quantitative"},
-        "y": {
-          "field": "Primary energy consumption per capita (kWh/person)",
-          "type": "quantitative"
-        },
-        "text": {"field": "Entity", "type": "nominal"},
-        "color": {"value": "black"},
-        "size": {"value": 13}
+      {
+          "mark": "text",
+          "transform": [
+              {
+                  "filter": "datum.Entity === 'Australia' || datum.Entity === 'China' || datum.Entity === 'United States' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria' || datum.Entity === 'Brazil'"
+              }
+          ],
+          "encoding": {
+              "x": {
+                  "field": "gdp_per_capita",
+                  "type": "quantitative"
+              },
+              "y": {
+                  "field": "Primary energy consumption per capita (kWh/person)",
+                  "type": "quantitative"
+              },
+              "text": {
+                  "field": "Entity",
+                  "type": "nominal"
+              },
+              "color": {"value": "black"},
+              "size": {"value": 16},
+              "opacity": {
+                  "condition": {"selection": "highlight", "value": 1},
+                  "value": 0.2
+              }
+          }
       }
-    }
   ],
-  "config": {}
+  "config": {
+      "legend": {
+      "labelFontSize": 14,
+      "titleFontSize": 14
+    }
+  }
 }
