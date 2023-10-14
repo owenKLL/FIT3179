@@ -153,6 +153,8 @@
               },
               "color": {"value": "black"},
               "size": {"value": 16},
+              "yOffset": {"value": 0},
+              "xOffset": {"value": 35},
               "opacity": {
                   "condition": {"selection": "highlight", "value": 1},
                   "value": 0.2
