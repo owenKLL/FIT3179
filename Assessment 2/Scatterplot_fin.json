@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 480,
   "height": 360,
-  "title": "GDP vs Energy Consumption (kWh/person) per Capita",
   "data": {
     "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/cleaned_global-data-on-sustainable-energy_with_continent.csv"
   },
