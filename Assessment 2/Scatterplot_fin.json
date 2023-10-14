@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 480,
+  "width": 600,
   "height": 360,
   "data": {
     "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/cleaned_global-data-on-sustainable-energy_with_continent.csv"
