@@ -35,7 +35,7 @@
         "color": {
           "field": "accesstoelec",
           "type": "quantitative",
-          "scale": {"scheme": "greenblue"},
+          "scale": {"scheme": "orangered"},
           "legend": {"title": "Access to Electricity (%)"}
         },
         "tooltip": [
