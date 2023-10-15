@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 360,
+  "data": {
+    "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/cleaned_global-data-on-sustainable-energy_with_continent.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "Low-carbon electricity (% electricity)",
+          "as": "avg_low_carbon_electricity"
+        }
+      ],
+      "groupby": ["Continent", "Year"]
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"format": "%Y"}
+    },
+    "y": {
+      "field": "avg_low_carbon_electricity",
+      "type": "quantitative",
+      "title": "Average Low-carbon Electricity (%)",
+      "stack": "normalize",
+      "axis": {"format": "%"}
+    },
+    "color": {
+      "field": "Continent",
+      "type": "nominal",
+      "title": "Continent",
+      "scale": {
+        "domain": [
+          "Africa",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "range": [
+          "#72aee6",
+          "#ffad33",
+          "#88d98b",
+          "#ff6666",
+          "#aa80ff",
+          "#d49a6a"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year",
+        "timeUnit": "year"
+      },
+      {
+        "field": "avg_low_carbon_electricity",
+        "type": "quantitative",
+        "title": "Average Low-carbon Electricity (%)",
+        "format": ".2f"
+      },
+      {"field": "Continent", "type": "nominal", "title": "Continent"}
+    ]
+  },
+  "config": {"legend": {"labelFontSize": 14, "titleFontSize": 14}}
+}
