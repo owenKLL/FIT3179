@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment 2 - Global Sustainability Efforts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+</head>
+<body>
+    <header>
+        <h1>Global Sustainability & Wealth</h1>
+    </header>
+    <main>
+        <p> This relationship between sustainability and wealth will be investigated from <br>
+            a <span class="emphasis">continental</span> level, where the data can be broken into: <br><br>
+            <span class="Africa">Africa</span>, <span class="Asia"> &nbsp;Asia</span>, <span class="Europe"> &nbsp;Europe</span>, <span class="NA"> &nbsp;North America</span>, <span class="Oceania">Oceania</span>, and <span class="SA">South America</span>. <br><br>
+            There will also be a more  granular <span class="emphasis">country</span> level of analysis when exploring this topic. <br><br>
+            Some of the key metrics being discussed will be <span class="emphasis">GDP</span>, <br>
+            <span class="emphasis">GDP Growth</span>, <span class="emphasis">&nbsp;Total Energy Consumption</span>,<span class="emphasis">&nbsp;CO2 Emissions</span>, <br>
+            <span class="emphasis">&nbsp;Low-Carbon Electricity</span>, <span class="emphasis">&nbsp;Renewable Energy</span>, and <span class="emphasis">&nbsp;Population Access to Electricity</span>. <br>     
+        </p>
+        <h1>Biggest CO2 Emitting Countries</h1>
+        <p> Looking at the data from <span class="emphasis">2000</span> to <span class="emphasis">2019</span>, the trend <br>
+            shows that <span class="Asia">Asian</span> countries tend to be some of the <br>
+            biggest emitters of <span class="emphasis">CO2</span> in absolute terms, which  can be<br>
+            expected because of their larger populations. <br><br>
+            <span class="Europe">Europe</span> has been decreasing over this time period, with <span class="emphasis">Germany</span> <br> 
+            reducing from <span class="emphasis">830k (kt)</span> to <span class="emphasis">660k (kt)</span> across the time period.
+        </p><br>
+        <section id="vis2" class="visualization">
+            <h2>Top 10 CO2 (kt) Emitting Countries per Year</h2><br>
+            <div id="vis2-container"></div>
+        </section><br>
+        <h1>Wealth & Energy</h1>
+        <p> Narrowing in on the <span class="Africa">African</span> continent depicts a strong <br>
+            positive correlation between <span class="emphasis">GDP</span> and <span class="emphasis">Total Energy Consumption</span> per capita, <br>
+            which can be seen by the 45 degree line formed on the scatterplot. <br><br>
+            This is in contrast to <span class="SA">South America</span>, which forms a flat line <br>
+            indicating a weak correlation present. <br><br>
+            The general movement of the points indicates a general increase in <span class="emphasis">GDP</span> and <br>
+            <span class="emphasis">Total Energy Consumption</span> per capita, while the increase in <br>
+            pont size in the upper right quadrant suggests that increased <br> 
+            <span class="emphasis">Renewable Energy (%)</span> is associated with an increase in <br>
+            <span class="emphasis">GDP</span> and <span class="emphasis">Total Energy Consumption</span> per capita.  
+        </p><br>
+        <section id="vis1" class="visualization">
+            <h2>GDP vs Total Energy Consumption (kWh/person) per Capita</h2><br>
+            <div id="vis1-container"></div>
+        </section><br>
+        <h1>Low Carbon Electricity</h1>
+        <p> This chart displays how the <span class="emphasis">Average Low-Carbon Electricity (%)</span> of each <br>
+            continent per year compares to one another in a proportional sense. <br><br>
+
+            <span class="Oceania">Oceania</span> has remained relatively the same over the time period, <br>
+            but we can see that <span class="Europe">Europe</span> has increased by about <span class="emphasis">15%</span> <br>
+            while <span class="SA">South America</span> has decreased by about <span class="emphasis">5%</span> to about <br>
+            the same average of approximately <span class="emphasis">60% Electricity</span> from <br> 
+            <span class="emphasis">Low-Carbon</span> sources.
+        </p><br>
+        <section id="vis3" class="visualization">
+            <h2>Average Low-Carbon Electricity (%) per Year</h2><br>
+            <div id="vis3-container"></div>
+        </section><br>
+        <h1>GDP Growth during Covid-19</h1>
+        <p> So far there is reasonable evidence to suggest a relationship <br>
+            between sustainability efforts and wealth particularly in recent years. <br><br>
+
+            However, the Covid-19 pandemic looks to have had a large <br>
+            impact globally which could affect many sustainability efforts. <br><br>
+
+            Of note, <span class="emphasis">Guyana</span> in <span class="SA">South America</span> had a major increase <br>
+            in <span class="emphasis">GDP</span> by <span class="emphasis">43.48%</span> in <span class="emphasis">2020</span>, so it would be <br>
+            interesting to see how much of this gets invested in <br>
+            sustainability in the future years, given a lot of their wealth <br> 
+            is sourced from oil. 
+        </p><br>
+        <section id="vis4" class="visualization">
+            <h2>GDP Growth in 2020 (%)</h2><br>
+            <div id="vis4-container"></div>
+        </section><br>
+        <h1>Future Sustainability</h1>
+        <p> Regarding future sustainability efforts, it appears that <span class="Africa">Africa</span> will represent <br>
+            a great opportunity for future endeavours. <br><br>
+            As this is an area of immense population growth, <br>
+            with a lesser percentage of the population having <br> 
+            <span class="emphasis">Access to Electricity</span>, how this continent tackles sustainability <br> 
+            will have a lasting impact thus representing an area for global investment. 
+        </p><br>
+        <section id="vis5" class="visualization">
+            <h2>Population Access to Electricity in 2020 (%)</h2><br>
+            <div id="vis5-container"></div>
+        </section><br>
+        </p><br>
+    </main>
+    <footer>
+        <p style="font-family: Lora;">Data visualisation created by Owen Leigh-Lancaster for FIT3179, <a href="https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy">Source</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

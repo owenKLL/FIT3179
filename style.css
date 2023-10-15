@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h1 {
+    font-family: 'Lora', serif;
+    font-weight: 1200;
+    font-size: 45px;  
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 24px;  
+    text-align: center;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    text-align: center;
+}
+
+header {
+    font-family: 'Lora', serif;
+    background-color: #4C6375;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%; 
+    font-weight: 900;
+    font-size: 28px;  
+}
+
+footer {
+    font-family: 'Lora', serif;
+    background-color: #4C6375;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 1em;
+}
+
+main {
+    max-width: 100rem;
+    margin: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem;
+    justify-content: center;
+}
+
+
+.visualization {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;  
+}
+
+.Africa {
+   font-weight: 600; 
+   color: #72aee6;
+}
+
+.Asia {
+    font-weight: 600; 
+    color: #ffad33;
+}
+
+.Europe {
+    font-weight: 600; 
+    color: #88d98b;
+}
+
+.NA {
+    font-weight: 600; 
+    color: #ff6666;
+}
+
+.Oceania {
+    font-weight: 600; 
+    color: #aa80ff;
+}
+
+.SA {
+    font-weight: 600; 
+    color: #d49a6a;
+}
+
+.emphasis {
+    font-weight: 600; 
+}
+
+.controls {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;  
+}
+
+input[type=range],
+select {
+    width: 20%;
+    margin: 0.5em;
+    text-align: left;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    padding: 4;
+    margin: 1;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+
+select {
+    font-size: 18px; 
+    font-weight: 400;
+}
