@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 360,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/Earth.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"},
+      "encoding": {}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/owenKLL/FIT3179/main/Assessment%202/cleaned_global-data-on-sustainable-energy_with_continent.csv"
+            },
+            "key": "Entity",
+            "fields": ["gdp_growth", "Year"]
+          }
+        },
+        {"calculate": "+datum.gdp_growth", "as": "numeric_gdp_growth"},
+        {
+          "filter": "(datum.numeric_gdp_growth != null) && (+datum.Year === 2020)"
+        }
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "numeric_gdp_growth",
+          "type": "quantitative",
+          "scale": {"scheme": "purplebluegreen"},
+          "legend": {"title": "GDP Growth"}
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {
+            "field": "numeric_gdp_growth",
+            "type": "quantitative",
+            "title": "GDP Growth",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": "transparent"}}
+}
